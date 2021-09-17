@@ -226,10 +226,6 @@ impl Compress {
         zlib_header: bool,
         window_bits: u8,
     ) -> Compress {
-        assert!(
-            window_bits > 8 && window_bits < 16,
-            "window_bits must be within 9 ..= 15"
-        );
         Compress {
             inner: Deflate::make(level, zlib_header, window_bits),
         }
